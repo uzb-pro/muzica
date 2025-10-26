@@ -1,0 +1,102 @@
+.header {
+  background: linear-gradient(90deg, #1e1e2f, #2a2a72); /* Gradient fon */
+  padding: 20px 0; /* Bir oz ko'proq bo'sh joy */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Chuqurroq soya */
+  position: sticky; /* Sticky header qo'shildi */
+  top: 0;
+  z-index: 1000;
+
+  .container {
+    max-width: 1280px; /* Zamonaviy kenglik */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Ikonlar orasidagi masofa oshirildi */
+
+    .icon {
+      font-size: 26px; /* Bir oz kattaroq ikonlar */
+      color: #ffffff; /* Oq rang */
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: #00ddeb; /* Yorqin cyan rang */
+        transform: scale(1.1); /* Hoverda kattalashadi */
+      }
+    }
+
+    .login-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #00ddeb; /* Yangi gradientli tugma */
+      color: #1e1e2f; /* Kontrast uchun quyuq rang */
+      padding: 10px 16px; /* Bir oz katta */
+      border-radius: 8px; /* Yumshoqroq burchaklar */
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: #00b7c3; /* Hoverda quyuqroq */
+        transform: translateY(-2px); /* Ko'tarilish effekti */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .profile {
+      position: relative;
+
+      .dropdown-menu {
+        position: absolute;
+        top: 45px; /* Bir oz pastga */
+        right: 0;
+        background: #ffffff; /* Oq fon saqlanadi */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Chuqurroq soya */
+        border-radius: 8px;
+        width: 160px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        opacity: 0; /* Animatsiya uchun */
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
+        visibility: hidden; /* Dastlab yashirin */
+
+        &.active { /* Agar ochiladigan bo'lsa */
+          opacity: 1;
+          transform: translateY(0);
+          visibility: visible;
+        }
+
+        a,
+        button {
+          text-align: left;
+          padding: 10px;
+          border: none;
+          background: none;
+          width: 100%;
+          cursor: pointer;
+          color: #1e1e2f; /* Quyish rang */
+          font-size: 15px;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: #e0f7ff; /* Hoverda yorqin fon */
+            color: #00ddeb; /* Cyan rang */
+          }
+        }
+      }
+    }
+  }
+}
